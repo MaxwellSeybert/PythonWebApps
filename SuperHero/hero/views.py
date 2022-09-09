@@ -28,6 +28,15 @@ class BlackWidowView(TemplateView):
             'image': '/static/images/black_widow.jpg'
 
         }
+class SpiderManView(TemplateView):
+    template_name = 'hero.html'
+
+    def get_context_data(self, **kwargs):
+        return {
+            'title': 'SpiderMan',
+            'id': 'Peter Parker',
+            'image': '/static/images/spiderman.jpg'
+        }
         
 class IndexView(TemplateView):
     template_name = 'heroes.html'
