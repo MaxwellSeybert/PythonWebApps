@@ -1,0 +1,22 @@
+{% extends 'theme.html' %}
+
+
+
+{% block content %}
+
+{% for photo in photos %}
+
+<div class="container">
+    <div style="padding: 15px;">
+        <a href="/photo/{{ photo }}" class='btn bg-primary'>
+            {{photo}}
+
+        </a>
+    </div>
+
+</div>
+
+
+{% endfor %}
+
+{% endblock content %}
