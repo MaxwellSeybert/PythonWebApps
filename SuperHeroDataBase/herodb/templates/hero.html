@@ -1,0 +1,29 @@
+{%extends 'theme.html'%}
+{%block content%}
+<div>
+    <div class="row" style="padding: 1%;">
+        <div class="col">
+            <h2>{{hero.name}}</h2>
+        </div>
+        <div class='col'>
+            <h3>Strengths</h3>
+            <p>{{hero.strengths}}</p>
+        </div>
+    </div>
+    <div class="row" style="padding: 1%;">
+        <div class="col">
+            <h2>Secret Identity - {{hero.secretIdentity}}</h2>
+
+        </div>
+        <div class='col'>
+            <h3>Weaknessess</h3>
+            <p>{{hero.weaknessess}}</p>
+        </div>
+    </div>
+
+
+
+
+    <img src="/static/images/{{hero.imageLoc}} " alt={{hero.imageLoc}} width="500" style="padding: 1%;">
+</div>
+{%endblock content%}
