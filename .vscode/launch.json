@@ -9,7 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "manage.py",
-            "cwd": "${workspaceFolder}/ClassroomDemos/Superhero",
+            "cwd": "${workspaceFolder}/Project6/Superhero",
             "args": [
                 "runserver",
                 "8001"
