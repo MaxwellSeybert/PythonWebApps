@@ -29,4 +29,4 @@ static_sites:
   name: pythonwebapps-superhero-static
   routes:
   - path: /static
-  source_dir: Project6/SuperHero/static
+  source_dir: Project6/Superhero/static
