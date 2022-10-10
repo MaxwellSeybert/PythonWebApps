@@ -7,7 +7,7 @@ from django.contrib import admin
 
 urlpatterns = [
 
-    path('',                HeroListView.as_view(),    name='home'),
+    path('',                HeroListView.as_view(),    name='hero_list'),
     path('<int:pk>',        HeroDetailView.as_view(),  name='hero_detail'),
     path('add',             HeroCreateView.as_view(),  name='hero_add'),
     path('<int:pk>/',       HeroUpdateView.as_view(),  name='hero_edit'),
