@@ -18,7 +18,7 @@ Log In
 <form method="post" class="m-5">
     {% csrf_token %}
 
-    {{ form|crispy }}
+    {{ form }}
 
     <button type="submit" class="btn btn-primary m-5">Log In</button>
 </form>
