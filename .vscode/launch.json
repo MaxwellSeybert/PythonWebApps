@@ -5,14 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Django",
+            "name": "Test",
             "type": "python",
             "request": "launch",
             "program": "manage.py",
-            "cwd": "${workspaceFolder}/Project6/Superhero",
+            "cwd": "${workspaceFolder}/Superhero",
             "args": [
-                "runserver",
-                "8001"
+                "test"
             ],
             "django": true,
             "justMyCode": true
