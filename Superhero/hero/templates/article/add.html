@@ -1,7 +1,8 @@
 {% extends 'theme.html' %}
 
+
 {% block title %}
-Add New Hero
+Add New Article
 {% endblock title %}
 
 
@@ -17,7 +18,7 @@ Add New Hero
         {{ form|crispy }}
 
         <button class="btn btn-success m-5" type="submit">Save Record</button>
-        <a class="btn btn-success m-5" href="hero/delete">Delete Record</a>
+        <a class="btn btn-success m-5" href="article/delete">Delete Record</a>
 
     </form>
 

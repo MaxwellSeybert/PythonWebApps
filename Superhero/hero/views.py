@@ -6,6 +6,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views.generic import TemplateView
 from django.views.generic import CreateView, DeleteView, DetailView, ListView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 
 from .models import Superhero
 
@@ -42,5 +44,12 @@ class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
+
+class UserUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = "registration/settings.html"
+    model = User
+    fields = ['first_name', 'last_name', 'username', 'email']
+    success_url = reverse_lazy('hero_list')
+
 
 
