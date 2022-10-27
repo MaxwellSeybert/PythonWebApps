@@ -1,3 +1,9 @@
+databases:
+- engine: PG
+  name: db
+  num_nodes: 1
+  size: db-s-dev-database
+  version: "12"
 envs:
 - key: DISABLE_COLLECTSTATIC
   scope: RUN_AND_BUILD_TIME
@@ -6,6 +12,25 @@ name: jellyfish-app
 region: nyc
 services:
 - environment_slug: python
+  envs:
+  - key: DATABASE_URL
+    scope: RUN_TIME
+    value: ${db.DATABASE_URL}
+  - key: POSTGRES_DB
+    scope: RUN_AND_BUILD_TIME
+    value: ${db.DATABASE}
+  - key: POSTGRES_HOST
+    scope: RUN_AND_BUILD_TIME
+    value: ${db.HOSTNAME}
+  - key: POSTGRES_USER
+    scope: RUN_AND_BUILD_TIME
+    value: ${db.USERNAME}
+  - key: POSTGRES_PASSWORD
+    scope: RUN_AND_BUILD_TIME
+    value: ${db.PASSWORD}
+  - key: POSTGRES_PORT
+    scope: RUN_AND_BUILD_TIME
+    value: ${db.PORT}
   github:
     branch: main
     deploy_on_push: true
@@ -18,8 +43,9 @@ services:
   - path: /
   run_command: |
     python manage.py migrate --no-input
+    python manage.py loaddata config/data.json
     gunicorn --worker-tmp-dir /dev/shm config.wsgi
-  source_dir: Project6/Superhero
+  source_dir: Superhero
 static_sites:
 - environment_slug: html
   github:
@@ -29,4 +55,4 @@ static_sites:
   name: pythonwebapps-superhero-static
   routes:
   - path: /static
-  source_dir: Project6/Superhero/static
+  source_dir: Superhero/static
