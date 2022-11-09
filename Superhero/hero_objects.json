@@ -1,0 +1,38 @@
+[
+    {
+        "id": 7,
+        "name": "Iron Man",
+        "identity": "Tony Stark",
+        "description": "Billionare",
+        "image": "iron_man.jpg",
+        "strengths": "Rich",
+        "weaknesses": "Human Body"
+    },
+    {
+        "id": 8,
+        "name": "Hulk",
+        "identity": "Bruce Banner",
+        "description": "Big Green Angry Guy",
+        "image": "hulk.jpg",
+        "strengths": "Super Strength",
+        "weaknesses": "Loses Control"
+    },
+    {
+        "id": 9,
+        "name": "SpiderMan",
+        "identity": "Peter Parker",
+        "description": "Bit by radioactive spider",
+        "image": "spiderman.jpg",
+        "strengths": "Super Strength",
+        "weaknesses": "Radiation"
+    },
+    {
+        "id": 10,
+        "name": "Captain America",
+        "identity": "Steve Rodgers",
+        "description": "Super Soldier",
+        "image": "captain_america.jpg",
+        "strengths": "Super Strength",
+        "weaknesses": "No Ranged Attack"
+    }
+]
