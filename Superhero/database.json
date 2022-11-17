@@ -52,6 +52,71 @@
         }
     },
     {
+        "model": "admin.logentry",
+        "pk": 5,
+        "fields": {
+            "action_time": "2022-11-17T17:48:33.747Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Tony Stark",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 6,
+        "fields": {
+            "action_time": "2022-11-17T17:49:11.714Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "1",
+            "object_repr": "Photo object (1)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 7,
+        "fields": {
+            "action_time": "2022-11-17T17:49:39.913Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "2",
+            "object_repr": "Photo object (2)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 8,
+        "fields": {
+            "action_time": "2022-11-17T17:49:55.207Z",
+            "user": 1,
+            "content_type": 10,
+            "object_id": "3",
+            "object_repr": "Photo object (3)",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 9,
+        "fields": {
+            "action_time": "2022-11-17T17:52:28.740Z",
+            "user": 1,
+            "content_type": 7,
+            "object_id": "1",
+            "object_repr": "Tony Stark",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Image\"]}}]"
+        }
+    },
+    {
         "model": "auth.permission",
         "pk": 1,
         "fields": {
@@ -376,11 +441,47 @@
         }
     },
     {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add photo",
+            "content_type": 10,
+            "codename": "add_photo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change photo",
+            "content_type": 10,
+            "codename": "change_photo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete photo",
+            "content_type": 10,
+            "codename": "delete_photo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view photo",
+            "content_type": 10,
+            "codename": "view_photo"
+        }
+    },
+    {
         "model": "auth.user",
         "pk": 1,
         "fields": {
             "password": "pbkdf2_sha256$390000$WT6rze8vK2eK6kz5krvgiQ$QJiAvPD+Bd93BO+FNqA7MhKLrxA4omWJ0kX00QqeCDM=",
-            "last_login": "2022-10-16T19:38:10.784Z",
+            "last_login": "2022-11-17T17:09:30.015Z",
             "is_superuser": true,
             "username": "maxwell",
             "first_name": "",
@@ -398,7 +499,7 @@
         "pk": 2,
         "fields": {
             "password": "pbkdf2_sha256$390000$VzhnBtuTkpXPDjnbL5pk8j$O14Tw4b4Etp4BFGypHCFkJdIDDsVT+NRVq7fkzNaLZo=",
-            "last_login": "2022-10-16T19:39:55.659Z",
+            "last_login": "2022-10-27T03:11:19.903Z",
             "is_superuser": false,
             "username": "hulk",
             "first_name": "",
@@ -520,51 +621,127 @@
         }
     },
     {
-        "model": "hero.superhero",
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "hero",
+            "model": "photo"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "e17nkpsxe6kvyhmkklme73q31lf9tz1w",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAQRf-FtSEgr-LSfb-BDMMgVQNJaVfGf1eSLnR7zzn3xQLsWwl7pzUsiV2YZKffLQI-qA6Q7lBvjWOr27pEPhR-0M7nluh5Pdy_gwK9jNo7kCYLcigmmbx16KQAlU1EQEEmG7LSK0x6ssYReHHW0UYN-euqyN4f6rw4Cg:1oviOI:OMi8oxK2S0rFdEXZDeO9GP6QyKv-WkQaFvgqWOmO-3Y",
+            "expire_date": "2022-12-01T17:09:30.025Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "rgi4l6wcakemg4mo8pi7x2lam1kymagy",
+        "fields": {
+            "session_data": ".eJxVjMsOwiAQRf-FtSE8WmBcuvcbyMAMUjU0Ke3K-O_apAvd3nPOfYmI21rj1nmJE4mzMOL0uyXMD247oDu22yzz3NZlSnJX5EG7vM7Ez8vh_h1U7PVbMybwTNbZHLIOGYbROBe8SwE8GCpJK9LeDsTZKhsMaOUZDAMWP2IR7w_brjeU:1ontId:xt3pBQSKb74YkTy0k-Zq8gI86sOAEr_9jO9b4M_2Dss",
+            "expire_date": "2022-11-10T03:11:19.913Z"
+        }
+    },
+    {
+        "model": "hero.photo",
+        "pk": 5,
+        "fields": {
+            "title": "Black Widow",
+            "image": "images/black_widow.jpg"
+        }
+    },
+    {
+        "model": "hero.photo",
+        "pk": 6,
+        "fields": {
+            "title": "Captain America",
+            "image": "images/captain_america.jpg"
+        }
+    },
+    {
+        "model": "hero.photo",
         "pk": 7,
         "fields": {
-            "name": "Iron Man",
-            "identity": "Tony Stark",
-            "description": "Billionare",
-            "image": "iron_man.jpg",
-            "strengths": "Rich",
-            "weaknesses": "Human Body"
+            "title": "Hulk",
+            "image": "images/hulk.jpg"
         }
     },
     {
-        "model": "hero.superhero",
+        "model": "hero.photo",
         "pk": 8,
         "fields": {
-            "name": "Hulk",
-            "identity": "Bruce Banner",
-            "description": "Big Green Angry Guy",
-            "image": "hulk.jpg",
-            "strengths": "Super Strength",
-            "weaknesses": "Loses Control"
+            "title": "Iron Man",
+            "image": "images/iron_man_GFealhk.jpg"
         }
     },
     {
-        "model": "hero.superhero",
+        "model": "hero.photo",
         "pk": 9,
         "fields": {
-            "name": "SpiderMan",
-            "identity": "Peter Parker",
-            "description": "Bit by radioactive spider",
-            "image": "spiderman.jpg",
-            "strengths": "Super Strength",
-            "weaknesses": "Radiation"
+            "title": "Spiderman",
+            "image": "images/spiderman.jpg"
         }
     },
     {
         "model": "hero.superhero",
-        "pk": 10,
+        "pk": 2,
+        "fields": {
+            "name": "Black Widow",
+            "identity": "Natasha Romanoff",
+            "description": "Spy",
+            "image": null,
+            "strengths": "Super Good Spy",
+            "weaknesses": "Human"
+        }
+    },
+    {
+        "model": "hero.superhero",
+        "pk": 3,
         "fields": {
             "name": "Captain America",
             "identity": "Steve Rodgers",
             "description": "Super Soldier",
-            "image": "captain_america.jpg",
-            "strengths": "Super Strength",
-            "weaknesses": "No Ranged Attack"
+            "image": null,
+            "strengths": "Super Strong",
+            "weaknesses": "Range"
+        }
+    },
+    {
+        "model": "hero.superhero",
+        "pk": 4,
+        "fields": {
+            "name": "Hulk",
+            "identity": "Bruce Banner",
+            "description": "Big green and angry",
+            "image": null,
+            "strengths": "Strong",
+            "weaknesses": "Angry"
+        }
+    },
+    {
+        "model": "hero.superhero",
+        "pk": 5,
+        "fields": {
+            "name": "Iron Man",
+            "identity": "Tony Stark",
+            "description": "Rich",
+            "image": null,
+            "strengths": "Smart and Rich",
+            "weaknesses": "Human"
+        }
+    },
+    {
+        "model": "hero.superhero",
+        "pk": 6,
+        "fields": {
+            "name": "Spiderman",
+            "identity": "Peter Parker",
+            "description": "spiderman",
+            "image": null,
+            "strengths": "Super strong",
+            "weaknesses": "can die"
         }
     },
     {
@@ -573,7 +750,16 @@
         "fields": {
             "author": 1,
             "title": "Stuff",
-            "body": "Today I did stuff"
+            "body": "Today I did not do stuff"
+        }
+    },
+    {
+        "model": "hero.article",
+        "pk": 5,
+        "fields": {
+            "author": 2,
+            "title": "Hello",
+            "body": "Good Day"
         }
     }
 ]
