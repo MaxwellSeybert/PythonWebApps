@@ -9,7 +9,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from .models import Superhero
+from .models import Superhero, Photo
 
 
 class HeroListView(ListView):
@@ -51,5 +51,44 @@ class UserUpdateView(LoginRequiredMixin, UpdateView):
     fields = ['first_name', 'last_name', 'username', 'email']
     success_url = reverse_lazy('hero_list')
 
+class PhotoCreateView(LoginRequiredMixin, CreateView):
+    template_name = "photos/add.html"
+    model = Photo
+    fields = '__all__'
+    success_url = reverse_lazy('photo_list')
+
+class PhotoListView(ListView):
+    template_name= "photos/list.html"
+    model = Photo
+    context_object_name = 'photos'
+class PhotoDetailView(DetailView):
+    template_name = 'photos/detail.html'
+    model = Photo
+class PhotoUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = "photos/edit.html"
+    model = Photo
+    fields = '__all__'
+class PhotoDeleteView(LoginRequiredMixin,DeleteView):
+    model = Photo
+    template_name = 'photos/delete.html'
+    success_url = reverse_lazy('photo_list')
+class PhotoCarouselView(TemplateView):
+    template_name = 'photos/carousel.html'
+
+    def get_context_data(self, **kwargs):
+        photos = Photo.objects.all()
+        carousel = carousel_data(photos)
+        return dict(title='Carousel View', carousel=carousel)
+
+
+def carousel_data(photos):
+
+    def photo_data(id, image):
+        x = dict(image_url=f"/media/{image}", id=str(id), label=f"{image} {id}")
+        if id == 0:
+            x.update(active="active", aria='aria-current="true"')
+        return x
+
+    return [photo_data(id, photo.image) for id, photo in enumerate(photos)]
 
 
