@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.views.generic import RedirectView
 from .views import HeroCreateView, HeroDeleteView, HeroDetailView, HeroListView, HeroUpdateView, PhotoCreateView, SignUpView, UserUpdateView, PhotoListView, PhotoDeleteView, PhotoDetailView, PhotoUpdateView, PhotoCarouselView
 from .views_articles import ArticleCreateView, ArticleListView, ArticleDeleteView, ArticleDetailView, ArticleUpdateView
+from .views_message import MessageListView, MessageCreateView, MessageDeleteView, MessageDetailView, MessageUpdateView
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,6 +34,12 @@ urlpatterns = [
     path('photo/<int:pk>/', PhotoUpdateView.as_view(), name = 'photo_edit'),
     path('photo/<int:pk>/delete', PhotoDeleteView.as_view(), name = 'photo_delete'),
     path('photo/carousel',              PhotoCarouselView.as_view()),
+    #Message Views
+    path('message/',                  MessageListView.as_view(),    name='message_list'),
+    path('message/<int:pk>',          MessageDetailView.as_view(),  name='message_detail'),
+    path('message/add',              MessageCreateView.as_view(),  name='message_add'),
+    path('message/<int:pk>/',         MessageUpdateView.as_view(),  name='message_edit'),
+    path('message/<int:pk>/delete',   MessageDeleteView.as_view(),  name='message_delete'),
     
 
 

@@ -9,8 +9,8 @@ def build_code():
     print('build_code()')
     # generate_software_planner()
     # generate_static_site
-    generate_course()
-    # generate_messenger()
+    #generate_course()
+    generate_messenger()
     # generate_blog()
     # generate_book()
 
@@ -35,7 +35,7 @@ def generate_blog():
 
 
 def generate_messenger():
-    project_path = Path('/Users/seaman/Github/PythonWebApps/08')
+    project_path = Path('/Users/maxwe/Documents/School/BACS350/PythonWebApps/Superhero')
     project_name = 'Messenger'
     project_app = 'messenger'
     project_path = create_new_project(project_path, project_name)
