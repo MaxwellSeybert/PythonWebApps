@@ -16,10 +16,10 @@ Sign Up
 {% block content %}
 
 <form method="post" class="m-5">
-
+    {% csrf_token %}
 
     {{ form }}
-    {% csrf_token %}
+
     <button type="submit" class="btn btn-primary m-5">Sign Up</button>
 </form>
 
